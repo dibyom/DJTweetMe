@@ -6,7 +6,7 @@ class SearchController < ApplicationController
                     ['gtkm2nkemvm2z62kqzcdretf', 'bHXTWsNWBXRE'])
 		@search = rdio.call('search', {query: 'Dark Horse', types:'Track'})['result']['results']
 
-		render :json => @tweets, only: [:key, :name]
+		render :json => @tweets
 	end
 	
 
