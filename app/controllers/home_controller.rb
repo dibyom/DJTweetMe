@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
-	before_filter :find_model
 
 	def index
-		
+
 	end	
 
 	# private
