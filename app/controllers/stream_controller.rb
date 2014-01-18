@@ -1,4 +1,5 @@
-class StreamController < ApplicationController
+class 
+	StreamController < ApplicationController
 	respond_to :json
 
 	def index
