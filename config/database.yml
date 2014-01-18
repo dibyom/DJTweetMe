@@ -27,7 +27,7 @@ development:
   encoding: unicode
   database: djtweet_development
   pool: 5
-  username: dibyo
+  username: vagrant
   password:
 
 test:
@@ -35,7 +35,7 @@ test:
   encoding: unicode
   database: djtweet_test
   pool: 5
-  username: dibyo
+  username: vagrant
   password:
 
 production:
