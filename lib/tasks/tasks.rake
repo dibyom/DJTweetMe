@@ -11,7 +11,7 @@ namespace :jobs do
 		client.user do |object|
 			case object
 			when Twitter::Tweet
-				puts object.text
+				@tweet = Tweet.create(text: object.text)
 			end
 		end
 	end
