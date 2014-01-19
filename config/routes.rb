@@ -3,7 +3,7 @@ DjtweetServer::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'public/index.html'
+   root :to => 'index'
 
    get 'tweets/:id' => 'stream#index'
    get  'search/:query' => 'search#index'
