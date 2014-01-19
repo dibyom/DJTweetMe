@@ -10,8 +10,8 @@ var trackName = new Array();
       trackVote[i]=0;
       i++;
     }
-
-    function getData(){
+    hold = true;
+    function getData(callback){
       var id;
       dupe=true;
       $.getJSON('http://dj-tweet.herokuapp.com/tweets/'+tweetID,
@@ -52,6 +52,9 @@ var trackName = new Array();
         tweetID=tdata[q-1].id;
         }       
       });
+      updateTopFive(function() {
+        callback();
+      });
     }
 
     function parseTweet(var1){
@@ -69,15 +72,13 @@ var trackName = new Array();
     }
 
     function update(){
-      getData();
-      var timeout = 3000;
-      var action = function() {
-          console.log("HHHHHHHHHHHHH");
-          updateTopFive();
-          getData();
-      };
-      setInterval(action, timeout);
-    }
+        var timeout = 3000;
+        var action = function() {
+            getData();
+        };
+        setInterval(action, timeout);
+      }
+
 
     function nextSong(){
       playSong();
@@ -85,6 +86,22 @@ var trackName = new Array();
 
     function main(){
       playSong();
+    }
+
+      function resetSong(arrayPos){
+      trackVote[arrayPos]=0;
+    }
+
+    function loader(){
+      update();
+    }
+
+    function pauseSong(){
+      apiswf.rdio_pause();
+    }
+
+    function resumeSong(){
+      apiswf.rdio_play();
     }
 
     function playSong(){
@@ -177,23 +194,6 @@ var trackName = new Array();
       document.getElementById("fourth-vote").innerHTML = trackVote[topFive[3]];
       document.getElementById("fifth").innerHTML = trackName[topFive[4]];
       document.getElementById("fifth-vote").innerHTML = trackVote[topFive[4]];
-      
+
     }
 
-    function resetSong(arrayPos){
-      trackVote[arrayPos]=0;
-    }
-
-    function loader(){
-      setTimeout(function() { update();}, 2600);
-      setTimeout(function() { updateTopFive();}, 2500);
-      getData();
-    }
-
-    function pauseSong(){
-      apiswf.rdio_pause();
-    }
-
-    function resumeSong(){
-      apiswf.rdio_play();
-    }
