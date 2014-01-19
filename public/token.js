@@ -32,4 +32,5 @@ THE SOFTWARE.
 Local
 //var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
 var playback_token = "GBZS28K4_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqLXR3ZWV0Lmhlcm9rdWFwcC5jb209RJI7ALg0ZXes-f1KCEgz";
-var domain = "localhost";
+//var domain = "localhost";
+var domain = "dj-tweet.herokuapp.com"
