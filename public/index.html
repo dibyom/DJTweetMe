@@ -1,0 +1,142 @@
+<html>
+<head>
+  <title>DJ TWEET!!!</title>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="jquery-1.5.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script src="token.js"></script>
+  <script src="hello.js"></script>
+  <script src="main.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.1.0.min.js"></script>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <script src="js/modernizr.js"></script>
+  <style type="text/css">
+  #freq div {
+    height: 10px;
+    background-color: red;
+  }
+  #upsell div {
+    display: none;
+  }
+
+  #apiswf {
+    display: none;
+    visibility:  !important;
+  }
+
+  ul{
+    list-style-type: none;
+
+  }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h1 class="panel"><center> Welcome to DJ Tweet</center></h1>
+    </div>
+  </div> 
+
+  <div class="row">
+    <div class="large-12 columns small-centered medium-centered large-centered">
+      <div class="large-6 medium-6 columns">
+        <a class="twitter-timeline" data-chrome="nofooter transparent" href="https://twitter.com/search?q=%40MHacksDJTweet" data-widget-id="424387855553556480">Tweets about "@MHacksDJTweet"</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+      </div>
+      <div class="large-6 medium-6 columns medium-centered large-centered">
+        <h2> Upcoming Tracks!!! </h2>
+        <!-- <button class="large success button" onclick="updateTopFive()">update</button>
+        <button class="large success button" onclick="getData()">getData</button> --> 
+        <!-- <div class="" id="first"></div>
+        <div class="" id="second"></div>
+        <div class="" id="third"></div>
+        <div class="" id="fourth"></div>
+        <div class="" id="fifth"></div> -->
+
+        <table>
+          <thead>
+            <tr>
+              <th >Name</th>
+              <th width="200">Votes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="first"></td>
+              <td id="first-vote"></td>
+            </tr>
+            <tr>
+              <td id="second"></td>
+              <td id="second-vote"></td>
+            </tr>
+            <tr>
+              <td id="third"></td>
+              <td id="third-vote"></td>
+            </tr>
+            <tr>
+              <td id="fourth"></td>
+              <td id="fourth-vote"></td>
+            </tr>
+            <tr>
+              <td id="fifth"></td>
+              <td id="fifth-vote"></td>
+            </tr>
+            
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <div class="row"> 
+    <div class="button-bar medium-6 small-6 large-6 columns small-centered medium-centered large-centered ">
+      <ul class="button-group small-centered medium-centered large-centered">
+        <li><button class=" button [large success radius round]" onclick="main()">Start</button></li>
+        <li><button class=" button [large success radius round]" onclick="nextSong()">Next</button></li> 
+        <li><button class=" button [large success radius round]" onclick="pauseSong()">Pause</button></li>
+        <li><button class=" button [large success radius round]" onclick="resumeSong()">Resume</button></li> 
+      </ul>
+    </div>
+
+    <div class="large-12 medium-12 columns panel small-centered medium-centered large-centered">
+      <div class="large-6 medium-6 small-6 columns">
+        <ul>
+          <br>
+          <li><b>Album : </b> <span id="album"></span> </li>
+          <br>
+          <li><b>Artist : </b><span id="artist"></span> </li>
+          <br>
+          <li><b>Track : </b><span id="track"></span>  </li>
+        </ul>
+      </div>
+
+      <div class="large-4 medium-4 small-4 columns">
+        <img src="" id="art">
+      </div>
+    </div>
+
+
+  </div>
+  
+  <div class="row">
+    
+    <div id="subscriber"><center>&copy; 2014 Connor Bratten, Matt Hajduk, Dibyo Mukherjee.<br> <a href="http://mhacks.org/"> MHacks </a>2014 </center></div>
+    <div id="apiswf"> </div>
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+  $(document).foundation();
+  </script>
+  
+</body>
+</html>
