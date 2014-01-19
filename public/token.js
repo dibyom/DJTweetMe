@@ -29,5 +29,7 @@ THE SOFTWARE.
 //   {"status": "ok", "result": "YOUR_PLAYBACK_TOKEN"}
 // then update playback_token below with YOUR_PLAYBACK_TOKEN and the domain below with YOUR_DOMAIN
 
-var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
+Local
+//var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
+var playback_token = "GBZS28K4_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqLXR3ZWV0Lmhlcm9rdWFwcC5jb209RJI7ALg0ZXes-f1KCEgz";
 var domain = "localhost";
