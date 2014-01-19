@@ -12,6 +12,10 @@ namespace :jobs do
 			case object
 			when Twitter::Tweet
 				@tweet = Tweet.create(text: object.text)
+				@song_name = 
+				rdio = Rdio.new(['62k6xnjstf92y6zcmfqd5ajj', 'ZY5XxvFXqe'])
+				@search = rdio.call('search', {query: params[:query], types:'Track'})['result']['results']
+				@song = 
 			end
 		end
 	end
