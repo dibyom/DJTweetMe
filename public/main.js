@@ -54,13 +54,6 @@ var trackName = new Array();
       });
     }
 
-    function delayStart(){
-      
-      setTimeout(function() { playSong();}, 3500);
-      setTimeout(function() { updateTopFive();}, 3000);
-      getData();
-    }
-
     function parseTweet(var1){
       var parsed = var1.split("@MhacksDJTweet ").pop();
       var parsed = parsed.split('.').join("");
@@ -70,30 +63,27 @@ var trackName = new Array();
     }
 
     callback_object.positionChanged = function positionChanged(position) {
-      if(position>len-2){
-        playSong();
-      }
-      
-    }
-
-    callback_object.playStateChanged = function playStateChanged(playState) {
-      if(playState !=1 ){
+      if(position>len-3){
         playSong();
       }
     }
 
     function update(){
-      
-      var timeout = 200;
+      getData();
+      var timeout = 3000;
       var action = function() {
+          console.log("HHHHHHHHHHHHH");
           updateTopFive();
           getData();
       };
       setInterval(action, timeout);
-
     }
 
     function nextSong(){
+      playSong();
+    }
+
+    function main(){
       playSong();
     }
 
@@ -103,12 +93,7 @@ var trackName = new Array();
       resetSong(topFive[0]);
     }
 
-    function main(){
-      playSong();
-    }
-  
-
-    function updateTopFive(playingTrack){
+    function updateTopFive(){
         var i =0;
         var high = -1;
         var store;
@@ -200,20 +185,15 @@ var trackName = new Array();
     }
 
     function loader(){
-      setTimeout(function() { update();}, 2000);
-      setTimeout(function() { updateTopFive();}, 1000);
+      setTimeout(function() { update();}, 2600);
+      setTimeout(function() { updateTopFive();}, 2500);
       getData();
     }
 
-    function pauseSong(playState){
+    function pauseSong(){
       apiswf.rdio_pause();
     }
 
     function resumeSong(){
       apiswf.rdio_play();
-    }
-     callback_object.playStateChanged = function playStateChanged(playState) {
-    // The playback state has changed.
-    // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
-    $('#playState').text(playState);
     }
