@@ -5,6 +5,7 @@ DjtweetServer::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'stream#index'
 
+   get 'tweets/:id' => 'stream#index'
    get  'search/:query' => 'search#index'
 
   # Example of regular route:
