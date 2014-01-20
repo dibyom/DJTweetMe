@@ -58,7 +58,7 @@ var trackName = new Array();
     }
 
     function parseTweet(var1){
-      var parsed = var1.split("@MhacksDJTweet ").pop();
+      var parsed = var1.split("@DJTweetMe ").pop();
       var parsed = parsed.split('.').join("");
       var Parsed = parsed.split(',').join("");
       var parsed = parsed.split("#play",1);
