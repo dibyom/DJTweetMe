@@ -35,10 +35,10 @@
 
 <body>
 
-   <div class="row">
+  <div class="row">
     <div class="large-12 columns panel">
       <h1><center> Welcome to DJTweetMe</center></h1>
-      <h5> <center> Send your song requests to <b>@DJTweetMe</b> with <b>#play</b> <centers> </h5>
+      <h5> <center> Send your song requests to <b>@DJTweetMe</b> with <b>#play</b> </center> </h5> 
     </div>
   </div> 
 
@@ -47,18 +47,10 @@
       <div class="large-6 medium-6 columns">
         <a class="twitter-timeline" data-chrome="nofooter transparent" href="https://twitter.com/search?q=%40DJTweetMe" data-widget-id="425083895462100992">Tweets about "@DJTweetMe"</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
       </div>
+
       <div class="large-6 medium-6 columns medium-centered large-centered">
         <h2> Upcoming Tracks!!! </h2>
-        <!-- <button class="large success button" onclick="updateTopFive()">update</button>
-        <button class="large success button" onclick="getData()">getData</button> --> 
-        <!-- <div class="" id="first"></div>
-        <div class="" id="second"></div>
-        <div class="" id="third"></div>
-        <div class="" id="fourth"></div>
-        <div class="" id="fifth"></div> -->
-
         <table>
           <thead>
             <tr>
@@ -90,44 +82,42 @@
             
           </tbody>
         </table>
-
       </div>
     </div>
   </div>
-
+  
   <br />
-  <div class="row"> 
-    <div class="button-bar medium-6 small-6 large-6 columns small-centered medium-centered large-centered ">
-      <ul class="button-group small-centered medium-centered large-centered">
-        <li><button class=" button [large success radius round]" onclick="main()">Start</button></li>
-        <li><button class=" button [large success radius round]" onclick="nextSong()">Next</button></li> 
-        <li><button class=" button [large success radius round]" onclick="pauseSong()">Pause</button></li>
-        <li><button class=" button [large success radius round]" onclick="resumeSong()">Resume</button></li> 
-      </ul>
-    </div>
 
-    <div class="large-12 medium-12 columns panel small-centered medium-centered large-centered">
-      <div class="large-6 medium-6 small-6 columns">
+  <div class="row panel"> 
+    <div class="large-16 medium-16 small-16 columns small-centered medium-centered large-centered">
+      <div class="large-8 medium-8 small-8 columns">
+        <h3> <b> <center> Now Playing </center> </b> </h3>
         <ul>
+          <li><h4>Track : <span id="track"></span> </h4> </li>
           <br>
-          <li><b>Album : </b> <span id="album"></span> </li>
+          <li><h4>Artist : <span id="artist"></span> </h4> </li>
           <br>
-          <li><b>Artist : </b><span id="artist"></span> </li>
-          <br>
-          <li><b>Track : </b><span id="track"></span>  </li>
+          <li><h4>Album :  <span id="album"></span>  </h4> </li>
         </ul>
       </div>
-
       <div class="large-4 medium-4 small-4 columns">
         <img src="" id="art">
       </div>
     </div>
-
-
   </div>
-  
+
   <div class="row">
-    
+    <div class="button-bar medium-6 small-6 large-6 columns small-centered medium-centered large-centered ">
+      <ul class="button-group small-centered medium-centered large-centered">
+        <li><button class=" button [medium success radius round]" onclick="main()">Start</button></li>
+        <li><button class=" button [medium success radius round]" onclick="nextSong()">Next</button></li> 
+        <li><button class=" button [medium success radius round]" onclick="pauseSong()">Pause</button></li>
+        <li><button class=" button [medium success radius round]" onclick="resumeSong()">Resume</button></li> 
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
     <div id="subscriber"><center>&copy; 2014 Connor Bratten, Matt Hajduk, Dibyo Mukherjee.<br> <a href="http://mhacks.org/"> MHacks </a></center></div>
     <div id="apiswf"> </div>
   </div>
@@ -137,6 +127,6 @@
   <script>
   $(document).foundation();
   </script>
-  
+
 </body>
 </html>
