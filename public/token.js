@@ -38,4 +38,4 @@ THE SOFTWARE.
 //var domain = "dj-tweet.herokuapp.com";
 
  var playback_token="GA1S3H9F_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqdHdlZXRtZS5jb211gcEhfFBvCD8Alg0C42NZ";
- var domain = "djtweetme.com"
+ var domain = "www.djtweetme.com";
