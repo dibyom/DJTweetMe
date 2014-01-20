@@ -37,5 +37,5 @@ THE SOFTWARE.
 //var playback_token = "GBZS28K4_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqLXR3ZWV0Lmhlcm9rdWFwcC5jb209RJI7ALg0ZXes-f1KCEgz";
 //var domain = "dj-tweet.herokuapp.com";
 
- var playback_token="GA1S3H9F_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqdHdlZXRtZS5jb211gcEhfFBvCD8Alg0C42NZ";
+ var playback_token="GBFS3Icd_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqand3dy5kanR3ZWV0bWUuY29tcVXiz7DAck0Ce8BHBA41CQ==";
  var domain = "www.djtweetme.com";
