@@ -4,6 +4,8 @@ var trackName = new Array();
     var trackLen = new Array();
     var topFive = new Array(5);
     var tweetID = 0;
+    var len =0;
+    first = true;
 
     i=0;
     while(i<5000){
@@ -18,37 +20,46 @@ var trackName = new Array();
       function(tdata) {
         
         if (tdata.length != 0)
-        {
-          q=0;
-        while(q<tdata.length){
-          dupe=true;
-          $.getJSON('http://djtweetme.herokuapp.com/search/' + parseTweet(tdata[q].text),
-          function(rdata) {
-            if (rdata.length != 0)
-            {
-            //DATA
-            var added = false;
-            i=0;
-            while (i<trackID.length)
-            {
-              if(rdata[0].key==trackID[i])
-              { //the ID key is a duplicate of one in the database
-                trackVote[i]++;
-                added = true;
-              }
-              i++;
-            }
-            if(added == false)
-            {
-             trackID[i]=rdata[0].key;
-             trackName[i]=rdata[0].name;
-             trackVote[i]++;
-             trackLen[i]=rdata[0].duration;
-           }
+          {
+          if(tdata.length > 20 && first == true){
+            high = tdata.length;
+            console.log(high);
+            q = high - 20;
+            first = false;
           }
-          });
-          q++;
-        }
+          else{
+            high = tdata.length;
+            q=0;
+          }
+          while(q<high){
+            dupe=true;
+            $.getJSON('http://djtweetme.herokuapp.com/search/' + parseTweet(tdata[q].text),
+            function(rdata) {
+              if (rdata.length != 0)
+              {
+              //DATA
+              var added = false;
+              i=0;
+              while (i<trackID.length)
+              {
+                if(rdata[0].key==trackID[i])
+                { //the ID key is a duplicate of one in the database
+                  trackVote[i]++;
+                  added = true;
+                }
+                i++;
+              }
+              if(added == false)
+              {
+               trackID[i]=rdata[0].key;
+               trackName[i]=rdata[0].name;
+               trackVote[i]++;
+               trackLen[i]=rdata[0].duration;
+             }
+            }
+            });
+            q++;
+          }
         tweetID=tdata[q-1].id;
         }       
       });
@@ -62,12 +73,12 @@ var trackName = new Array();
       var parsed = parse.split("@djtweetme ").pop();
       var parsed = parsed.split('.').join("");
       var Parsed = parsed.split(',').join("");
-      var parsed = parsed.split("#play",1);
+      var parsed = parsed.split("#",1);
       return parsed;
     }
 
     callback_object.positionChanged = function positionChanged(position) {
-      if(position>len-3){
+      if(position>len-2){
         playSong();
       }
     }
@@ -197,4 +208,5 @@ var trackName = new Array();
       document.getElementById("fifth-vote").innerHTML = trackVote[topFive[4]];
 
     }
+
 
