@@ -15,8 +15,10 @@ var trackName = new Array();
     hold = true;
     function getData(callback){
       var id;
+      var host = 'http://'+window.location.host;
+
       dupe=true;
-      $.getJSON('http://djtweetme.herokuapp.com/tweets/'+tweetID,
+      $.getJSON(host + '/tweets/'+tweetID,
       function(tdata) {
         
         if (tdata.length != 0)
@@ -33,7 +35,7 @@ var trackName = new Array();
           }
           while(q<high){
             dupe=true;
-            $.getJSON('http://djtweetme.herokuapp.com/search/' + parseTweet(tdata[q].text),
+            $.getJSON(host + '/search/' + parseTweet(tdata[q].text),
             function(rdata) {
               if (rdata.length != 0)
               {
