@@ -5,6 +5,7 @@ var trackName = new Array();
     var topFive = new Array(5);
     var tweetID = 0;
     var len =0;
+    first = true;
 
     i=0;
     while(i<5000){
@@ -20,9 +21,11 @@ var trackName = new Array();
         
         if (tdata.length != 0)
           {
-          if(tdata.length > 24){
+          if(tdata.length > 20 && first == true){
             high = tdata.length;
-            q = high - 24;
+            console.log(high);
+            q = high - 20;
+            first = false;
           }
           else{
             high = tdata.length;
