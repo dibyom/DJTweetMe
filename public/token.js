@@ -29,13 +29,28 @@ THE SOFTWARE.
 //   {"status": "ok", "result": "YOUR_PLAYBACK_TOKEN"}
 // then update playback_token below with YOUR_PLAYBACK_TOKEN and the domain below with YOUR_DOMAIN
 
+var playback_token;
+var domain;
+var host = window.location.host;
 
+if(host.match(/herokuapp/)){
+	 playback_token="GBdS3IiQ_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqdHdlZXRtZS5oZXJva3VhcHAuY29t1GIiwlX-yGsJ_vAkA2bkOw==";	
+ 	 domain = "djtweetme.herokuapp.com";
+}
+else if(host.match(/djtweetme.com/))
+{
 
-//var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
-//var domain = "localhost";
+}
+else if(host.match(/localhost/))
+{
+	 playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
+	 domain = "localhost";
+
+}
+
 
 //var playback_token = "GBZS28K4_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqLXR3ZWV0Lmhlcm9rdWFwcC5jb209RJI7ALg0ZXes-f1KCEgz";
 //var domain = "dj-tweet.herokuapp.com";
 
- var playback_token="GBdS3IiQ_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqdHdlZXRtZS5oZXJva3VhcHAuY29t1GIiwlX-yGsJ_vAkA2bkOw==";	
- var domain = "djtweetme.herokuapp.com";
+ // var playback_token="GBdS3IiQ_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqamRqdHdlZXRtZS5oZXJva3VhcHAuY29t1GIiwlX-yGsJ_vAkA2bkOw==";	
+ // var domain = "djtweetme.herokuapp.com";
