@@ -39,13 +39,13 @@ if(host.match(/herokuapp/)){
 }
 else if(host.match(/djtweetme.com/))
 {
-
+	playback_token = "GBFS30Rl_____zYyazZ4bmpzdGY5Mnk2emNtZnFkNWFqand3dy5ESlR3ZWV0TWUuY29t5G3gvDFbQX4rOFBIE89hpQ==";
+	domain = "www.DJTweetMe.com";
 }
 else if(host.match(/localhost/))
 {
 	 playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
 	 domain = "localhost";
-
 }
 
 
