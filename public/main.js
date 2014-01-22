@@ -102,6 +102,17 @@ var trackName = new Array();
       playSong();
     }
 
+    function clearVotes(){
+      //console.log("checker");
+      clearV=0;
+      while (clearV < trackVote.length-1)
+      {
+        trackVote[clearV] = 0;
+        //console.log("Track:" +trackName[clearV] + ", Votes:" + trackVote[clearV]);
+        clearV++;
+      }
+    }
+
       function resetSong(arrayPos){
       trackVote[arrayPos]=0;
     }
